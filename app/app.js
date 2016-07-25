@@ -1,14 +1,37 @@
-'use strict';
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+    'use strict';
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+    angular
+        .module('app', ['ngRoute', 'ngMessages', 'ngStorage', 'ngMockE2E', 'core', 'home', 'login'])
+        .config(['$locationProvider' ,'$routeProvider',
+                 function config($locationProvider, $routeProvider) {
+            $locationProvider.hashPrefix('!');
+
+            $routeProvider.
+              when('/', {
+                template: '<home></home>'
+              }).
+              when('/login', {
+                template: '<login></login>'
+              }).
+              otherwise('/');
+          }
+        ])
+        .run(run);
+
+
+    function run($rootScope, $http, $location, $localStorage) {
+        // keep user logged in after page refresh
+        if ($localStorage.currentUser) {
+            $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.currentUser.token;
+        }
+
+        // redirect to login page if not logged in and trying to access a restricted page
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            var publicPages = ['/login'];
+            var restrictedPage = publicPages.indexOf($location.path()) === -1;
+            if (restrictedPage && !$localStorage.currentUser) {
+                $location.path('/login');
+            }
+        });
+    }
