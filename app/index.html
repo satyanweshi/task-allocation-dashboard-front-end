@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-    <title>AngularJS JWT Authentication Example & Tutorial</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Allocation Dashboard</title>
 
-    <!-- bootstrap css -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Core CSS - Include with every page -->
+    <link href="static_content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static_content/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- SB Admin CSS - Include with every page -->
+    <link href="static_content/css/sb-admin.css" rel="stylesheet">
 
     <!-- application css -->
-    <link href="app.css" rel="stylesheet" />
+    <link href="static_content/css/app.css" rel="stylesheet" />
 </head>
 <body>
     <!-- main app container -->
-    <div class="jumbotron">
         <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div ng-view></div>
-            </div>
+              <div ng-view></div>
         </div>
-    </div>
 
     <!-- angular scripts -->
     <script src="bower_components/angular/angular.min.js"></script>
@@ -25,6 +27,15 @@
     <script src="bower_components/ngstorage/ngStorage.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
     <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    
+
+    <!-- Core Scripts - Include with every page -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="static_content/js/bootstrap.min.js"></script>
+    <script src="static_content/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="static_content/js/sb-admin.js"></script>
 
     <!-- application scripts -->
     <script src="app.js"></script>
