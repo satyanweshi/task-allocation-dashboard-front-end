@@ -8,6 +8,10 @@
     <!-- Core CSS - Include with every page -->
     <link href="static_content/css/bootstrap.min.css" rel="stylesheet">
     <link href="static_content/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- Page-Level Plugin CSS - Dashboard -->
+    <link href="static_content/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
+    <link href="static_content/css/plugins/timeline/timeline.css" rel="stylesheet">
 
     <!-- SB Admin CSS - Include with every page -->
     <link href="static_content/css/sb-admin.css" rel="stylesheet">
@@ -17,9 +21,7 @@
 </head>
 <body>
     <!-- main app container -->
-        <div class="container">
-              <div ng-view></div>
-        </div>
+	<div ng-view></div>
 
     <!-- angular scripts -->
     <script src="bower_components/angular/angular.min.js"></script>
@@ -32,7 +34,12 @@
     <!-- Core Scripts - Include with every page -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="static_content/js/bootstrap.min.js"></script>
+    <script src="static_content/js/plotly-latest.min.js"></script>
     <script src="static_content/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    
+    <!-- Page-Level Plugin Scripts - Dashboard -->
+    <script src="static_content/js/plugins/morris/raphael-2.1.0.min.js"></script>
+    <script src="static_content/js/plugins/morris/morris.js"></script>
 
     <!-- SB Admin Scripts - Include with every page -->
     <script src="static_content/js/sb-admin.js"></script>
@@ -46,6 +53,8 @@
     <script src="login/login.module.js"></script>
     <script src="home/home.component.js"></script>
     <script src="login/login.component.js"></script>
+    <script src="menu/menu.module.js"></script>
+    <script src="menu/menu.directive.js"></script>
 
     <!-- scripts for fake backend -->
     <script src="app-helpers/fake-backend.js"></script>
