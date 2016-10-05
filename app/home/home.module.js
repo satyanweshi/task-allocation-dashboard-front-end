@@ -3,5 +3,6 @@
 // Define the `phoneDetail` module
 angular.module('home', [
   'ngRoute',
-  'menuModule'
+  'menuModule',
+  'kpi'
 ]);
