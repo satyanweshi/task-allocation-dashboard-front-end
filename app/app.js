@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'ngMessages', 'ngStorage', 'ngMockE2E', 'core', 'home', 'login', 'kpi'])
+        .module('app', ['ngRoute', 'ngMessages', 'ngStorage', 'ngMockE2E', 'core', 'home', 'login', 'kpi', 'ui.bootstrap'])
         .config(['$locationProvider' ,'$routeProvider',
                  function config($locationProvider, $routeProvider) {
             $locationProvider.hashPrefix('!');

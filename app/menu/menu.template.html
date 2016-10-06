@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+<nav ng-controller="menuController" class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
             </br>
             <div class="navbar-header" style="padding-left:15px;">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -18,23 +18,11 @@
 
             <ul class="nav navbar-top-links navbar-right">
 
-
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="dropdown" ng-click="isMessagesCollapsed = !isMessagesCollapsed">
                         <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-messages">
-
-                    </ul>
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-envelope fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-messages">
+                    <ul class="dropdown-menu dropdown-messages" uib-collapse="isMessagesCollapsed">
                         <li>
                             <a href="#">
                                 <div>
@@ -82,10 +70,10 @@
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="dropdown" ng-click="isTaskCollapsed = !isTaskCollapsed">
                         <i class="fa fa-tasks fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-tasks">
+                    <ul class="dropdown-menu dropdown-tasks" uib-collapse="isTaskCollapsed">
                         <li>
                             <a href="#">
                                 <div>
@@ -161,10 +149,10 @@
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="dropdown" ng-click="isAlertCollapsed = !isAlertCollapsed">
                         <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-alerts">
+                    <ul class="dropdown-menu dropdown-alerts" uib-collapse="isAlertCollapsed">
                         <li>
                             <a href="#">
                                 <div>
@@ -221,10 +209,10 @@
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle" data-toggle="dropdown" ng-click="isUserProfileCollapsed = !isUserProfileCollapsed">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
+                    <ul class="dropdown-menu dropdown-user" uib-collapse="isUserProfileCollapsed">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
@@ -247,8 +235,8 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Summary</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a ng-click="isChartsCollapse = !isChartsCollapse"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level" uib-collapse="isChartsCollapse">
                                 <li>
                                     <a href="flot.html">Flot Charts</a>
                                 </li>
@@ -265,8 +253,8 @@
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a ng-click="isUIElementsCollapse = !isUIElementsCollapse"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level" uib-collapse="isUIElementsCollapse">
                                 <li>
                                     <a href="panels-wells.html">Panels and Wells</a>
                                 </li>
@@ -286,8 +274,8 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a ng-click="isMultiLevelDropDownCollapse = !isMultiLevelDropDownCollapse"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level" uib-collapse="isMultiLevelDropDownCollapse">
                                 <li>
                                     <a href="#">Second Level Item</a>
                                 </li>
@@ -295,8 +283,8 @@
                                     <a href="#">Second Level Item</a>
                                 </li>
                                 <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
+                                    <a ng-click="isMultiLevelThirdLevelCollapse = !isMultiLevelThirdLevelCollapse">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level" uib-collapse="isMultiLevelThirdLevelCollapse">
                                         <li>
                                             <a href="#">Third Level Item</a>
                                         </li>
@@ -316,8 +304,8 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
+                            <a ng-click="isSamplePagesCollapse = !isSamplePagesCollapse"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level" uib-collapse="isSamplePagesCollapse">
                                 <li>
                                     <a href="blank.html">Blank Page</a>
                                 </li>
